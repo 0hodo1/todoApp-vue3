@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <h2>Todo App</h2>
+    <div v-if="todos.length">
+      <div v-for="todo in todos" :key="todo.id">
+        <p>{{ todo.title }}</p>
+      </div>
+    </div>
+    <div v-else>
+      <p>Todos loading...</p>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  name: "HomeView",
+  components: {},
+  data() {
+    return {
+      todos: [],
+    };
+  },
+  mounted() {
+    fetch("http://localhost:3000/todos")
+      .then((res) => res.json())
+      .then((data) => (this.todos = data))
+      .catch((err) => console.log(err));
+  },
+};
 </script>
