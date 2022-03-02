@@ -4,7 +4,7 @@
     <h2>Todo App</h2>
     <div v-if="todos.length">
       <div v-for="todo in todos" :key="todo.id">
-        <Todos :todos="todo" />
+        <Todos :todos="todo" @deleteTodo="deleteHandle" @toggle="toggle" />
       </div>
     </div>
     <div v-else>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Todos from "../components/Todos.vue";
+import Todos from "../components/Todo.vue";
 
 export default {
   name: "HomeView",
@@ -31,6 +31,15 @@ export default {
       .then((res) => res.json())
       .then((data) => (this.todos = data))
       .catch((err) => console.log(err));
+  },
+  methods: {
+    deleteHandle(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
+    toggle(id) {
+      let todo = this.todos.find((todo) => todo.id === id);
+      todo.done = !todo.done;
+    },
   },
 };
 </script>
