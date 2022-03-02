@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AddTodo from "../views/AddTodo.vue";
+import UpdateTodo from "../views/UpdateTodo.vue";
 
 const routes = [
   {
@@ -12,6 +13,12 @@ const routes = [
     path: "/addtodo",
     name: "AddTodo",
     component: AddTodo,
+  },
+  {
+    path: "/updatetodo/:id",
+    name: "UpdateTodo",
+    component: UpdateTodo,
+    props: true,
   },
 ];
 

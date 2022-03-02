@@ -3,7 +3,9 @@
     <div class="title">
       <h3 @click="showDetail = !showDetail">{{ todos.title }}</h3>
       <div class="icon">
-        <span class="material-icons">edit</span>
+        <router-link :to="{ name: 'UpdateTodo', params: { id: todos.id } }"
+          ><span class="material-icons">edit</span></router-link
+        >
         <span @click="deleteTodo" class="material-icons">delete</span>
         <span @click="toggle" class="material-icons" tick>done</span>
       </div>

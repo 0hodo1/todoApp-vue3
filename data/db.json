@@ -3,13 +3,13 @@
     {
       "id": 1,
       "title": "Buy milk",
-      "detail": "Go to the Bim",
+      "detail": "Değişti",
       "done": false
     },
     {
       "id": 2,
       "title": "Buy eggs",
-      "detail": "Go to the Sok",
+      "detail": "Değişti 2",
       "done": false
     },
     {
