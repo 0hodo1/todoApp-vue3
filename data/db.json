@@ -3,21 +3,25 @@
     {
       "id": 1,
       "title": "Buy milk",
+      "detail": "Go to the Bim",
       "completed": false
     },
     {
       "id": 2,
       "title": "Buy eggs",
+      "detail": "Go to the Sok",
       "completed": false
     },
     {
       "id": 3,
       "title": "Buy bread",
+      "detail": "Go to the A101",
       "completed": false
     },
     {
       "id": 4,
       "title": "Buy cola",
+      "detail": "Go to the Bim",
       "completed": false
     }
   ]

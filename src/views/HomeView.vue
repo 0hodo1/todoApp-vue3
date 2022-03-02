@@ -4,7 +4,7 @@
     <h2>Todo App</h2>
     <div v-if="todos.length">
       <div v-for="todo in todos" :key="todo.id">
-        <p>{{ todo.title }}</p>
+        <Todos :todos="todo" />
       </div>
     </div>
     <div v-else>
@@ -14,11 +14,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import Todos from "../components/Todos.vue";
 
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    Todos,
+  },
   data() {
     return {
       todos: [],
