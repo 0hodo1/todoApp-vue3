@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Buy milk",
       "detail": "Go to the Bim",
-      "done": true
+      "done": false
     },
     {
       "id": 2,
